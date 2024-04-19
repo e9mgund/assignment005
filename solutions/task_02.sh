@@ -1,19 +1,17 @@
 read number
 
-function fibo() {
-    local n=$1
-    if [ $n -eq 0 ]; then
-    echo 0
-    else
-    fib=(0,1)
-    for ((i=2; i<n; i++)); do
-    local temp=$((a+b))
-    a=$b
-    b=$temp
-    done
-    return ${fib[1]}
-    fi
-}
+a=0
+b=1
 
-answer=$(fibo $number)
-echo $answer
+if [[ $number -eq 0 ]]; then
+echo $a
+elif [[ $number -eq 1 ]]; then
+echo $b
+else
+for ((i=2; i < number; ++ i)); do
+temp=$((a+b))
+a=$b
+b=$temp
+done
+echo $b
+fi
